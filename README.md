@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Your page does a soft refresh instead of a hard refresh you will see an update happening in the URL and it doesn't require multiple pages to load. We do this because it's a better experience for the user personally. Give the ability to use the back and forth button using history API and the app will have less load time. 
 
 ## Project Set Up
 
