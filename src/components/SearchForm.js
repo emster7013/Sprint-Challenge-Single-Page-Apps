@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  input {
+    padding: 1rem;
+    font-size: 1.2rem;
+    outline-color: orange;
+    width: 180px;
+    margin: 20px 0 40px;
+  }
+`
 
 export default function SearchForm(props) {
-  const setResults = props.setDataToDisplay;
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [dataToSearch] = useState(props.data);
-
-  const handleChange = event => setSearchTerm(event.target.value);
-
-  useEffect(() => {
-    const results = dataToSearch.filter(character =>
-      character.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
-  }, [searchTerm, setResults, dataToSearch]);
-
   return (
-    <form className="search-form">
-      <input placeholder="Search" value={searchTerm} onChange={handleChange} />
-    </form>
+    <Container>
+      <section className="search-form">
+      <form>
+        <input type="search" name="search" placeholder="search" onChange={props.handleSearch} />
+      </form>
+      </section>
+    </Container> 
   );
 }
